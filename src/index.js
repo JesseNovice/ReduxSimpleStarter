@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import API_Key from "./API_key";
 import SearchBar from "./components/search_bar";
+import API_Key from "./API_key";
 
-const API_Key = 'AIzaSyCIsI8PM98cbKbjL5GNjQBzdrKdHIapch4'
+const Key = API_Key
 
 // Create a new compnent. This componebt should produce some HTML
 const App = () => {

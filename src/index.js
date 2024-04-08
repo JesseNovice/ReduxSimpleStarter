@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import API_Key from "./API_key";
 import SearchBar from "./components/search_bar";
-import API_Key from "./API_key";
 
 const Key = API_Key
 

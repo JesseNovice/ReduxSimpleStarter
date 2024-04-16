@@ -4,6 +4,7 @@ import youtubeApiSearch from "youtube-api-search";
 import API_Key from "./API_key";
 import SearchBar from "./components/search_bar";
 import VideoList from "./components/video_list";
+import VideoDetail from "./components/video_detail";
 const Key = API_Key
 
 
@@ -12,10 +13,17 @@ class App extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { videos: [] };
+        this.state = { 
+            videos: [],
+             selectedVideo: null
+        };
         // API Search 
         youtubeApiSearch({key: Key, term: 'surfboards'}, (videos) => {
-            this.setState({videos}); // because the key value pair is the same name it is resolved as this.setState({videos: videos});
+            this.setState({
+                videos: videos,
+                selectedVideo: videos[0]
+            }); 
+
         });
     }
 
@@ -23,6 +31,7 @@ class App extends Component {
     return (
     <div>
         <SearchBar />
+        <VideoDetail video={this.state.selectedVideo}/>
         <VideoList videos={this.state.videos}/>
     </div>
     );
